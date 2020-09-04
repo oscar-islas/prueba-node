@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 
+const PORT = process.env.PORT;
+
 // request (petición) -> |middleware| -> response (respuesta)
 
 //__dirname es una variable global dentro del contexto de node que nos regresa la ruta en la cual nos encontramos actualmente
@@ -38,6 +40,6 @@ app.use((request, response) => {
     response.send('<h1>404</h1>');
 });
 
-app.listen(8000, () => {
+app.listen(PORT, () => {
     console.log("Servidor iniciado en el puerto 8000");
 });
